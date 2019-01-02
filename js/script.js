@@ -63,7 +63,9 @@ function loadData() {
             $ytvideos.append('<iframe src="https://www.youtube.com/embed/'+video+'"'+'width="70%" height="400" align="center" frameborder="0"allowfullscreen></iframe>');
             //$ytvideos.append('<li class="article"><a href="https://www.youtube.com/watch?v='+video+'">'+videoResponse[i].snippet.title+'</a></li>');
         };
-    })
+    }).error(function(e){
+        $ytvideos.text('Relevant YouTube videos could not be loaded.');
+    });
     return false;
     
 };
